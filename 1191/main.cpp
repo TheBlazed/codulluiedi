@@ -1,24 +1,22 @@
 #include <bits/stdc++.h>
-#define N 1005
 using namespace std;
+#define N 1005
 int a[N];
 int main(){
-    int n,m,i;
-    bool ord=0;
+    int n,i;
+    bool ord;
     cin>>n;
-    m=n;
     for(i=1;i<=n;++i) cin>>a[i];
     while(!ord){
         ord=1;
-        for(i=1;i<m;++i){
-            if(a[i]>a[i+1]){
-                swap(a[i],a[i+1]);
+        for(i=1;i<n;++i){
+            if(a[i]<a[i+1]){
                 ord=0;
+                swap(a[i],a[i+1]);
             }
         }
-        --m;
+        --n;
     }
-    for(i=1;i<=n;++i) cout<<a[i]<<' ';
+    for(i=1;a[i];++i) cout<<a[i]<<' ';
     return 0;
 }
- 
